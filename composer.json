@@ -1,6 +1,6 @@
 {
-    "name": "guiasturApiHeroku",
-    "description": "Proyecto PHP para Heroku",
+    "name": "duvanmesa/guiastur-api",
+    "description": "API para el proyecto Guiastur",
     "require": {
         "firebase/php-jwt": "^6.10"
     }
