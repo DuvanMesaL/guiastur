@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetSupervisor/Dto/GetSupervisorResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Actions/Queries/IGetSupervisoresQuery.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Repositories/ISupervisorRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetSupervisor/Dto/GetSupervisorResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Actions/Queries/IGetSupervisoresQuery.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Repositories/ISupervisorRepository.php";
 
 
 class GetSupervisoresQueryHandler implements IGetSupervisoresQuery{
@@ -40,10 +40,10 @@ class GetSupervisoresQueryHandler implements IGetSupervisoresQuery{
                     $supevisorEntity->observaciones,
                     $supevisorEntity->usuario_registro,
                     new DateTime($supevisorEntity->fecha_registro)
-                )            
+                )
             );
        }
        return $supervisoresDto;
-       
+
     }
 }

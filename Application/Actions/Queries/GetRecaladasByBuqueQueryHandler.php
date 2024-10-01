@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetRecaladasByBuque/Dto/GetRecaladasByBuqueRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetRecaladas/Dto/GetRecaladasResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Actions/Queries/IGetRecaladasByBuqueQuery.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Repositories/IRecaladaRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetRecaladasByBuque/Dto/GetRecaladasByBuqueRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetRecaladas/Dto/GetRecaladasResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Actions/Queries/IGetRecaladasByBuqueQuery.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Repositories/IRecaladaRepository.php";
 
 class GetRecaladasByBuqueQueryHandler implements IGetRecaladasByBuqueQuery{
 
@@ -13,7 +13,7 @@ class GetRecaladasByBuqueQueryHandler implements IGetRecaladasByBuqueQuery{
         $this->recaladaRepository = $recaladaRepository;
     }
 
-    public function handler(GetRecaladasByBuqueRequest $request) : GetRecaladasResponse{    
+    public function handler(GetRecaladasByBuqueRequest $request) : GetRecaladasResponse{
         $recaladasEntity = $this->recaladaRepository->findByBuqueId($request->getBuqueId());
         $recladasDto = array();
         foreach($recaladasEntity as $recalada){

@@ -1,10 +1,10 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/TurnoStatusEnum.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Constants/TurnoStatusEnum.php";
 
 
 class GetNextAllTurnosByStatusRequest{
-    private $turnoStatus; 
-    
+    private $turnoStatus;
+
     public function __construct(string $turnoStatus) {
         if(!isset($turnoStatus) || empty(trim($turnoStatus)) ){
             throw new \InvalidArgumentException("El Estado del Turno es requerida para Obtemer los siguientes turnos Por Estado");

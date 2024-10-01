@@ -1,9 +1,9 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/UsuarioRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Queries/LoginQueryHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/Login/LoginUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/Login/Dto/LoginRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/Login/Dto/LoginResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/UsuarioRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Queries/LoginQueryHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/Login/LoginUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/Login/Dto/LoginRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/Login/Dto/LoginResponse.php";
 
 class TestLoginUseCase
 {
@@ -32,22 +32,22 @@ class TestLoginUseCase
     {
 
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                    <table border=4> 
-                        <tr> 
-                            <th>USUARIO ID</th> 
-                            <th>NOMBRE</th> 
-                            <th>ROL</th> 
-                            <th>ESTADO</th> 
-                            <th>EMAIL</th> 
-                            <th>GUIA/SUPERVISOR</th> 
-                        </tr> 
+                    <table border=4>
+                        <tr>
+                            <th>USUARIO ID</th>
+                            <th>NOMBRE</th>
+                            <th>ROL</th>
+                            <th>ESTADO</th>
+                            <th>EMAIL</th>
+                            <th>GUIA/SUPERVISOR</th>
+                        </tr>
                         <TR>
-                            <td>" . $response->getId() . "</td> 
-                            <td>" . $response->getNombre() . "</td> 
-                            <td>" . $response->getRol() . "</td> 
-                            <td>" . $response->getEstado() . "</td> 
-                            <td>" . $response->getEmail() . "</td> 
-                            <td>" . $response->getGuiaOSupervisor() . "</td> 
+                            <td>" . $response->getId() . "</td>
+                            <td>" . $response->getNombre() . "</td>
+                            <td>" . $response->getRol() . "</td>
+                            <td>" . $response->getEstado() . "</td>
+                            <td>" . $response->getEmail() . "</td>
+                            <td>" . $response->getGuiaOSupervisor() . "</td>
                         </tr>
                     </table>";
         echo $output;

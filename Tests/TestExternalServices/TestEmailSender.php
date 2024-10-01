@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/ExternalServices/EmailSenderService.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/ExternalServices/EmailSenderService.php";
 
 class TestEmailSender{
     public static function testSendEmailShouldShowResponseMessage(){
@@ -8,7 +8,7 @@ class TestEmailSender{
         $destinationName = "JOHN CARLOS ARRIETA ARRIETA";
         $subject = "Notificacion de prueba";
         $body = "Si ves esto es porque funciona el notificador de mensajes por correo";
-        $notificationRequest = new EmailDestinationModel($destinationEmail, $destinationName, $subject, $body); 
+        $notificationRequest = new EmailDestinationModel($destinationEmail, $destinationName, $subject, $body);
         $mailler = new EmailSenderService() ;
         // Act
         $responseMessage = $mailler->send($notificationRequest);

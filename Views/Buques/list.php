@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Controllers/SessionUtility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/Login/Dto/LoginResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetBuques/Dto/GetBuquesResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/SessionUtility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/Login/Dto/LoginResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetBuques/Dto/GetBuquesResponse.php";
 SessionUtility::startSession();
 $usuarioLogin = $_SESSION[ItemsInSessionEnum::USER_LOGIN];
 if (!isset($usuarioLogin)) {
@@ -116,7 +116,7 @@ $infoMessage = $_SESSION[ItemsInSessionEnum::INFO_MESSAGE] ?? "";
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../Js/index.js"></script>
     <script src="../Js/alert.js"></script>
-   
+
 </body>
 
 </html>

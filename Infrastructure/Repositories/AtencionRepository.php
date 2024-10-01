@@ -1,19 +1,19 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Atencion.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Recalada.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Repositories/IAtencionRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/DuplicateEntryException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/NotFoundEntryException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/InvalidRecaladaException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Repositories/IAtencionRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Atencion.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Recalada.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Repositories/IAtencionRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/DuplicateEntryException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/NotFoundEntryException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/InvalidRecaladaException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Repositories/IAtencionRepository.php";
 
 class AtencionRepository implements IAtencionRepository
 {
     public function find(int $id): Atencion
     {
         try {
-            return Atencion::find($id); 
+            return Atencion::find($id);
         } catch (Exception $e) {
             $resul = Utility::getNotFoundRecordInfo($e->getMessage());
             if (count($resul) > 0) {
@@ -36,7 +36,7 @@ class AtencionRepository implements IAtencionRepository
     public function create(Atencion $Atencion): Atencion
     {
         try {
-            $Atencion->save(); 
+            $Atencion->save();
             return $Atencion;
         } catch (Exception $e) {
             $resul = Utility::getDuplicateRecordInfo($e->getMessage());
@@ -68,7 +68,7 @@ class AtencionRepository implements IAtencionRepository
     {
         try {
             $Atencion = $this->find($id);
-            return $Atencion->delete(); 
+            return $Atencion->delete();
         } catch (Exception $e) {
             $resul = Utility::getNotFoundRecordInfo($e->getMessage());
             if (count($resul) > 0) {
@@ -89,8 +89,8 @@ class AtencionRepository implements IAtencionRepository
                     "conditions" =>
                     [
                         "id = ? AND fecha_zarpe >= ?",
-                        $RecaladaId, 
-                        $now 
+                        $RecaladaId,
+                        $now
                     ]
                ]
             );
@@ -104,8 +104,8 @@ class AtencionRepository implements IAtencionRepository
                 [
                     "conditions" =>
                     [
-                        "recalada_id = ? AND ? between fecha_inicio AND fecha_cierre", 
-                        $RecaladaId, 
+                        "recalada_id = ? AND ? between fecha_inicio AND fecha_cierre",
+                        $RecaladaId,
                         $fechaInicio]
                 ]
             );
@@ -119,8 +119,8 @@ class AtencionRepository implements IAtencionRepository
                 [
                     "conditions" =>
                     [
-                        "recalada_id = ? AND  ? between fecha_inicio AND fecha_cierre", 
-                        $RecaladaId, 
+                        "recalada_id = ? AND  ? between fecha_inicio AND fecha_cierre",
+                        $RecaladaId,
                         $fechaCierre]
                 ]
             );
@@ -142,7 +142,7 @@ class AtencionRepository implements IAtencionRepository
     {
         try {
             $recalada = Recalada::find($recaladaId);
-            return $recalada->atencions; 
+            return $recalada->atencions;
         } catch (Exception $e) {
             $resul = Utility::getNotFoundRecordInfo($e->getMessage());
             if (count($resul) > 0) {

@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GenericDto.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GenericDto.php";
 
 class ReleaseTurnoResponse extends GenericDto
 {
@@ -8,15 +8,15 @@ class ReleaseTurnoResponse extends GenericDto
     private $estado;
     private $fecha_salida;
     private $usuario_salida;
-   
+
 
     public function __construct(
         int $id,
         int $numero,
         string $estado,
         DateTime $fecha_salida ,
-        int $usuario_salida 
-    
+        int $usuario_salida
+
     ) {
         if ($id === null || $id < 1) {
             throw new InvalidArgumentException("El ID del Turno es requerido para Liberar el Turno");

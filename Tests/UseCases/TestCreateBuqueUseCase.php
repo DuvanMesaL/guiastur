@@ -1,10 +1,10 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Commands/CreateBuqueCommandHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateBuque/Dto/CreateBuqueRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateBuque/Dto/CreateBuqueResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateBuque/CreateBuqueUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/BuqueRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Commands/CreateBuqueCommandHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateBuque/Dto/CreateBuqueRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateBuque/Dto/CreateBuqueResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateBuque/CreateBuqueUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/BuqueRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
 
 
 class TestCreateBuqueUseCase
@@ -35,20 +35,20 @@ class TestCreateBuqueUseCase
     private static function showBuqueData(CreateBuqueResponse $response, string $title)
     {
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> 
-                            <tr> 
-                                <th>BUQUE ID</th> 
-                                <th>CODIGO</th> 
-                                <th>NOMBRE</th> 
-                                <th>FOTO</th> 
-                                <th>RECALADAS</th> 
-                          </tr> 
+                        <table border=4>
+                            <tr>
+                                <th>BUQUE ID</th>
+                                <th>CODIGO</th>
+                                <th>NOMBRE</th>
+                                <th>FOTO</th>
+                                <th>RECALADAS</th>
+                          </tr>
                           <tr>
-                                <td>" . $response->getId() . "</td> 
-                                <td>" . $response->getBuque()->getCodigo() . "</td> 
-                                <td>" . $response->getBuque()->getNombre() . "</td> 
-                                <td>" . $response->getBuque()->getFechaRegistro()->format("Y-m-d H:i:s") . "</td>  
-                                <td>" . $response->getBuque()->getUsuarioRegistro() . "</td> 
+                                <td>" . $response->getId() . "</td>
+                                <td>" . $response->getBuque()->getCodigo() . "</td>
+                                <td>" . $response->getBuque()->getNombre() . "</td>
+                                <td>" . $response->getBuque()->getFechaRegistro()->format("Y-m-d H:i:s") . "</td>
+                                <td>" . $response->getBuque()->getUsuarioRegistro() . "</td>
                         </tr>";
         $output .= "</table>";
         echo $output;

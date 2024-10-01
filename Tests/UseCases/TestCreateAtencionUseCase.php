@@ -1,12 +1,12 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Commands/CreateAtencionCommandHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Queries/ValidateAtencionQueryHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateAtencion/Dto/CreateAtencionRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateAtencion/Dto/CreateAtencionResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateAtencion/CreateAtencionUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/AtencionRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Commands/CreateAtencionCommandHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Queries/ValidateAtencionQueryHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateAtencion/Dto/CreateAtencionRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateAtencion/Dto/CreateAtencionResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateAtencion/CreateAtencionUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/AtencionRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
 
 
 class TestCreateAtencionUseCase
@@ -51,34 +51,34 @@ class TestCreateAtencionUseCase
     {
         $atencion = $atenconResponse->getAtencion();
         $output = "<hr/><h3>$title</h3>
-        <table border=4> 
-            <tr> 
-                <th>BUQUE ID</th> 
-                <th>FECHA INICIO</th> 
-                <th>FECHA CIERRE ID ID</th> 
-                <th>TOTAL TURNOS</th> 
-                <th>OBSERVACIONES</th> 
-                <th>SUPERVISOR ID</th> 
-                <th>RECALADA ID</th> 
-                <th>FECHA REGISTRO</th> 
-                <th>USUARIO REGISTRO</th> 
+        <table border=4>
+            <tr>
+                <th>BUQUE ID</th>
+                <th>FECHA INICIO</th>
+                <th>FECHA CIERRE ID ID</th>
+                <th>TOTAL TURNOS</th>
+                <th>OBSERVACIONES</th>
+                <th>SUPERVISOR ID</th>
+                <th>RECALADA ID</th>
+                <th>FECHA REGISTRO</th>
+                <th>USUARIO REGISTRO</th>
             </tr>
             <tr>
-                <td>" . $atenconResponse->getId() . "</td> 
-                <td>" . $atencion->getFechaInicio()->format("Y-m-d H:i:s") . "</td> 
-                <td>" . $atencion->getFechaCierre()->format("Y-m-d H:i:s") . "</td> 
-                <td>" . $atencion->getTotalTurnos() . "</td> 
-                <td>" . $atencion->getObservaciones() . "</td> 
-                <td>" . $atencion->getSupervisorId() . "</td> 
-                <td>" . $atencion->getRecaladaId() . "</td> 
-                <td>" . $atencion->getFechaRegistro()->format("Y-m-d H:i:s") . "</td> 
-                <td>" . $atencion->getUsuarioRegistro() . "</td> 
+                <td>" . $atenconResponse->getId() . "</td>
+                <td>" . $atencion->getFechaInicio()->format("Y-m-d H:i:s") . "</td>
+                <td>" . $atencion->getFechaCierre()->format("Y-m-d H:i:s") . "</td>
+                <td>" . $atencion->getTotalTurnos() . "</td>
+                <td>" . $atencion->getObservaciones() . "</td>
+                <td>" . $atencion->getSupervisorId() . "</td>
+                <td>" . $atencion->getRecaladaId() . "</td>
+                <td>" . $atencion->getFechaRegistro()->format("Y-m-d H:i:s") . "</td>
+                <td>" . $atencion->getUsuarioRegistro() . "</td>
             </tr>
           </table>";
-        
+
         echo $output;
     }
-    
+
 }
 
 TestCreateAtencionUseCase::TestCreateAtencionUseShouldShowData();

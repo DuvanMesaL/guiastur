@@ -1,14 +1,14 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GenericDto.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GenericDto.php";
 class UseTurnoResponse extends GenericDto
 {
-   
+
     private $id;
     private $numero;
     private $estado;
     private $fecha_uso;
     private $usuario_uso;
-   
+
     public function __construct(
         int $id,
         int $numero,
@@ -19,7 +19,7 @@ class UseTurnoResponse extends GenericDto
         if ($id === null || $id < 1) {
             throw new InvalidArgumentException("El ID del Turno es requerido para Usar el Turno");
         }
-      
+
         if ($numero === null || $numero < 1) {
             throw new InvalidArgumentException("El Numero del Turno es requerido para Usar el Turno");
         }
@@ -62,7 +62,7 @@ class UseTurnoResponse extends GenericDto
     {
         return $this->fecha_uso;
     }
-    public function getUsuarioUso() : int 
+    public function getUsuarioUso() : int
     {
         return $this->usuario_uso;
     }

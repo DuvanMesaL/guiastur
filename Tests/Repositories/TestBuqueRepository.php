@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Buque.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/BuqueRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Buque.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/BuqueRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
 
 class TestBuqueRepository
 {
@@ -67,7 +67,7 @@ class TestBuqueRepository
             $id = 4;
             $repository = new BuqueRepository();
             $resul = $repository->delete($id);
-            echo  $resul ? '<hr><span style="color: green"> Buque ID: '.$id .' eliminado  fue eliminada<br></span>' : '<hr><span style="color: red"> Buque ID: '.$id .' No eliminada<br></span>'; 
+            echo  $resul ? '<hr><span style="color: green"> Buque ID: '.$id .' eliminado  fue eliminada<br></span>' : '<hr><span style="color: red"> Buque ID: '.$id .' No eliminada<br></span>';
         } catch (Exception $e) {
             echo '<hr><span style="color: red">ERROR AL ELIMINAR EL BUQUE <br></span>';
             echo '<span style="color: red"> ' . $e->getMessage() . '<br></span>';
@@ -95,19 +95,19 @@ class TestBuqueRepository
     private static function showBuqueData(array $buques, string $title)
     {
           $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> <tr> 
-                          <th>BUQUE ID</th> 
-                          <th>CODIGO</th> 
-                          <th>NOMBRE</th> 
-                          <th>FOTO</th> 
-                          <th>RECALADAS</th> 
+                        <table border=4> <tr>
+                          <th>BUQUE ID</th>
+                          <th>CODIGO</th>
+                          <th>NOMBRE</th>
+                          <th>FOTO</th>
+                          <th>RECALADAS</th>
                           </tr> ";
         foreach ($buques as $buque) {
-            $output .= "<td>" . $buque->id . "</td> 
-                        <td>" . $buque->codigo . "</td> 
-                        <td>" . $buque->nombre . "</td> 
-                        <td>" . $buque->foto . "</td> 
-                        <td>" . @count($buque->recaladas) . "</td> 
+            $output .= "<td>" . $buque->id . "</td>
+                        <td>" . $buque->codigo . "</td>
+                        <td>" . $buque->nombre . "</td>
+                        <td>" . $buque->foto . "</td>
+                        <td>" . @count($buque->recaladas) . "</td>
                         </tr>";
         }
         $output .= "</table>";
@@ -116,7 +116,7 @@ class TestBuqueRepository
 }
 
 
-// 
+//
 TestBuqueRepository::testSaveBuqueAndRetrieveWithID();
 TestBuqueRepository::testFindBuqueAndShowData();
 TestBuqueRepository::testUpdateBuqueAndShowNewData();

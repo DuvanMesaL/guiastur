@@ -1,9 +1,9 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Pais.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Repositories/IPaisRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/DuplicateEntryException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/NotFoundEntryException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Pais.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Repositories/IPaisRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/DuplicateEntryException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/NotFoundEntryException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
 
 class PaisRepository implements IPaisRepository
 {

@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Pais.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/PaisRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Pais.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/PaisRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
 
 class TestPaisRepository
 {
@@ -63,7 +63,7 @@ class TestPaisRepository
             $id = 4;
             $repository = new PaisRepository();
             $resul = $repository->delete($id);
-            echo  $resul ? '<hr><span style="color: green"> Pais ID: '.$id .'fue eliminada<br></span>' : '<hr><span style="color: red"> Pais ID: '.$id .' No fue eliminada<br></span>'; 
+            echo  $resul ? '<hr><span style="color: green"> Pais ID: '.$id .'fue eliminada<br></span>' : '<hr><span style="color: red"> Pais ID: '.$id .' No fue eliminada<br></span>';
         } catch (Exception $e) {
             echo '<hr><span style="color: red">ERROR EL ELIMINAR EL PAIS <br></span>';
             echo '<span style="color: red"> ' . $e->getMessage() . '<br></span>';
@@ -90,17 +90,17 @@ class TestPaisRepository
     private static function showPaises(array $paises, string $title)
     {
           $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> <tr> 
-                          <th>ID</th> 
-                          <th>NOMBRE</th> 
-                          <th>BANDERA</th> 
-                          <th>RECALADAS</th> 
+                        <table border=4> <tr>
+                          <th>ID</th>
+                          <th>NOMBRE</th>
+                          <th>BANDERA</th>
+                          <th>RECALADAS</th>
                           </tr> ";
         foreach ($paises as $pais) {
-            $output .= "<td>" . $pais->id . "</td> 
-                        <td>" . $pais->nombre . "</td> 
-                        <td>" . $pais->bandera . "</td> 
-                        <td>" . @count($pais->recaladas) . "</td> 
+            $output .= "<td>" . $pais->id . "</td>
+                        <td>" . $pais->nombre . "</td>
+                        <td>" . $pais->bandera . "</td>
+                        <td>" . @count($pais->recaladas) . "</td>
                         </tr>";
         }
         $output .= "</table>";

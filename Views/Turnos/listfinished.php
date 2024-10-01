@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Controllers/SessionUtility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/TurnoStatusEnum.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/Login/Dto/LoginResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetNextTurno/Dto/GetNextTurnoResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/SessionUtility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Constants/TurnoStatusEnum.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/Login/Dto/LoginResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetNextTurno/Dto/GetNextTurnoResponse.php";
 
 SessionUtility::startSession();
 $usuarioLogin = $_SESSION[ItemsInSessionEnum::USER_LOGIN];
@@ -34,19 +34,19 @@ $infoMessage = $_SESSION[ItemsInSessionEnum::INFO_MESSAGE] ?? "";
         Turnos Finalizados
     </div>
     <div class="icon-bar">
-    <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=menu"> 
+    <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=menu">
             <img src="<?= $baseUrl ?>/Views/Img/menu.png" alt="Menú">
         </a> &nbsp;&nbsp;
-        <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=listnextall"> 
+        <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=listnextall">
             <img src="<?= $baseUrl ?>/Views/Img/turnosiguientes48px.png" title="Proximos Turnos" alt="Proximos Turnos">
         </a>&nbsp;&nbsp;
-        <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=usedtoday"> 
+        <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=usedtoday">
             <img src="<?= $baseUrl ?>/Views/Img/turnoenuso48px.png" title="Turnos en Uso" alt="Turnos en uso">
         </a>&nbsp;&nbsp;
         <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=releasedtoday">
             <img src="<?= $baseUrl ?>/Views/Img/turnoliberado48px.png" title="Turnos Liberados" alt="Turlos liberados">
         </a> &nbsp;&nbsp;
-        <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=finishedtoday"> 
+        <a href="<?= $baseUrl ?>/Views/Turnos/index.php?action=finishedtoday">
             <img src="<?= $baseUrl ?>/Views/Img/turnofinalizado48px.png" alt="Turnos finalizados">
         </a>
     </div>

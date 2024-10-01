@@ -1,10 +1,10 @@
 <?php
 require_once __DIR__ . "/CreateRecaladaRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GenericDto.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GenericDto.php";
 class CreateRecaladaResponse extends GenericDto
 {
     private $id;
- 
+
 
     public function __construct(int $id)
     {

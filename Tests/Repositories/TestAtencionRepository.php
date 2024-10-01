@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Atencion.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/AtencionRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Atencion.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/AtencionRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
 
 class TestAtencionRepository
 {
@@ -76,7 +76,7 @@ class TestAtencionRepository
             $id = 4;
             $repository = new AtencionRepository();
             $resul = $repository->delete($id);
-            echo  $resul ? '<hr><span style="color: green"> La Atencion  fue eliminada<br></span>' : '<hr><span style="color: red"> La Atencion no fue eliminada<br></span>'; 
+            echo  $resul ? '<hr><span style="color: green"> La Atencion  fue eliminada<br></span>' : '<hr><span style="color: red"> La Atencion no fue eliminada<br></span>';
         } catch (Exception $e) {
             echo '<hr><span style="color: red">ERROR AL ELIMINAR LA ATENCION <br></span>';
             echo '<span style="color: red"> '. $e->getMessage() . '<br></span>';
@@ -110,7 +110,7 @@ class TestAtencionRepository
             $repository = new AtencionRepository();
             // Act
             $isValidate = $repository->validateAtencion($recaladaId, $fecha);
-            // Assert 
+            // Assert
             if ($isValidate) {
                 echo '<hr><span style="color: green"> La Atencion es validad para ' . $fecha->format("Y-m-d H:i:s") . '<br></span>';
             } else {
@@ -139,27 +139,27 @@ class TestAtencionRepository
     private static function showAtencionesData($atenciones, string $title)
     {
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> <tr> 
-                          <th>BUQUE ID</th> 
-                          <th>NOMBRE</th> 
-                          <th>RECALADA ID</th> 
-                          <th>ATENCION ID</th> 
-                          <th>INICIO</th> 
-                          <th>CIERRE</th> 
-                          <th>TOTAL TURNOS</th> 
-                          <th>TURNOS CREADOS</th> 
-                          <th>TURNOS DISPONIBLES</th> 
-                          <th>SUPERVISOR</th> 
+                        <table border=4> <tr>
+                          <th>BUQUE ID</th>
+                          <th>NOMBRE</th>
+                          <th>RECALADA ID</th>
+                          <th>ATENCION ID</th>
+                          <th>INICIO</th>
+                          <th>CIERRE</th>
+                          <th>TOTAL TURNOS</th>
+                          <th>TURNOS CREADOS</th>
+                          <th>TURNOS DISPONIBLES</th>
+                          <th>SUPERVISOR</th>
                           </tr> ";
         foreach ($atenciones as $atencion) {
-            $output .= "<td>" . $atencion->recalada->buque->id . "</td> 
-                        <td>" . $atencion->recalada->buque->nombre . "</td> 
-                        <td>" . $atencion->recalada->id . "</td> 
-                        <td>" . $atencion->id . "</td> 
-                        <td>" . $atencion->fecha_inicio . "</td> 
-                        <td>" . $atencion->fecha_cierre . "</td> 
-                        <td>" . $atencion->total_turnos . "</td> 
-                        <td>" . @count($atencion->turnos) . "</td> 
+            $output .= "<td>" . $atencion->recalada->buque->id . "</td>
+                        <td>" . $atencion->recalada->buque->nombre . "</td>
+                        <td>" . $atencion->recalada->id . "</td>
+                        <td>" . $atencion->id . "</td>
+                        <td>" . $atencion->fecha_inicio . "</td>
+                        <td>" . $atencion->fecha_cierre . "</td>
+                        <td>" . $atencion->total_turnos . "</td>
+                        <td>" . @count($atencion->turnos) . "</td>
                         <td>" . ($atencion->total_turnos - @count($atencion->turnos)) . "</td>
                         <td>" . $atencion->supervisor_id . "</td> </tr>";
 

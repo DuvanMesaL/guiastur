@@ -1,10 +1,10 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/TurnoStatusEnum.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CancelTurno/Dto/CancelTurnoRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CancelTurno/Dto/CancelTurnoResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Actions/Commands/ICancelTurnoCommand.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Repositories/ITurnoRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Turno.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Constants/TurnoStatusEnum.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CancelTurno/Dto/CancelTurnoRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CancelTurno/Dto/CancelTurnoResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Actions/Commands/ICancelTurnoCommand.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Repositories/ITurnoRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Turno.php";
 
 class CancelTurnoCommandHandler implements ICancelTurnoCommand{
     private $turnoRepository;
@@ -18,7 +18,7 @@ class CancelTurnoCommandHandler implements ICancelTurnoCommand{
         $turno = $this->turnoRepository->find($request->getTurnoId());
         $turno->estado = $estado;
         $observaciones = ($turno->obsevaciones !== null)
-                            ?  $turno->obsevaciones . "\n".TurnoStatusEnum::CANCELLED .": ". $request->getObservaciones() 
+                            ?  $turno->obsevaciones . "\n".TurnoStatusEnum::CANCELLED .": ". $request->getObservaciones()
                             : TurnoStatusEnum::CANCELLED .": ". $request->getObservaciones();
         $turno->obsevaciones = $observaciones;
         $turno->fecha_regreso = new DateTime();

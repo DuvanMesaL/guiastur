@@ -1,16 +1,16 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Commands/CreateUser/CreateUserCommandHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Commands/CreateUser/CreateUserSupervisorCommandHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateUser/Dto/CreateUserRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateUser/Dto/CreateUserResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateUser/CreateUserUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/UsuarioRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/SupervisorRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateUser/Dto/CreateUserSupervisorRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateUser/Dto/CreateUserSupervisorResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateUser/CreateUserSupervisorUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/RolTypeEnum.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/UsuarioStatusEnum.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Commands/CreateUser/CreateUserCommandHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Commands/CreateUser/CreateUserSupervisorCommandHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateUser/Dto/CreateUserRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateUser/Dto/CreateUserResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateUser/CreateUserUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/UsuarioRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/SupervisorRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateUser/Dto/CreateUserSupervisorRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateUser/Dto/CreateUserSupervisorResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateUser/CreateUserSupervisorUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Constants/RolTypeEnum.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Constants/UsuarioStatusEnum.php";
 
 
 
@@ -41,7 +41,7 @@ class TestCreateUserSupervisorUseCase
             // Arange
             $createUserSupervisorRequest = new CreateUserSupervisorRequest(
                 $cedula, $rnt, $createUserResponse
-            
+
             );
             $guiaRepository = new SupervisorRepository();
             $createUserSupervisorCommand = new CreateUserSupervisorCommandHandler($guiaRepository);
@@ -61,27 +61,27 @@ class TestCreateUserSupervisorUseCase
         $usuarioValided = $usuarioPendingTokenResponse;  // Usuari Creado con token esperando validacion
         $usuarioCreated = $usuarioPendingTokenResponse->getUsuario();  // Datos basicos del usuario
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> 
-                        <tr> 
-                            <th>USUARIO ID</th> 
-                            <th>NOMBRE</th> 
-                            <th>ROL ID</th> 
-                            <th>ROL</th> 
-                            <th>ESTADO</th> 
-                            <th>EMAIL</th> 
-                            <th>TOKEN DE VALIDACION EL USO</th> 
-                            <th>FECHA DE REGISTRO</th> 
+                        <table border=4>
+                        <tr>
+                            <th>USUARIO ID</th>
+                            <th>NOMBRE</th>
+                            <th>ROL ID</th>
+                            <th>ROL</th>
+                            <th>ESTADO</th>
+                            <th>EMAIL</th>
+                            <th>TOKEN DE VALIDACION EL USO</th>
+                            <th>FECHA DE REGISTRO</th>
                             <th>USUARIO REGISTRO</th>
-                        </tr> 
+                        </tr>
                         <TR>
                             <td>" . $usuarioValided->getId() . "</td>
                             <td>" . $usuarioCreated->getNombre() . "</td>
                             <td>" . $usuarioCreated->getRolId() . "</td>
                             <td>" . $usuarioValided->getRolNombre() . "</td>
-                            <td>" . $usuarioCreated->getEstado() . "</td> 
-                            <td>" . $usuarioCreated->getEmail() . "</td> 
+                            <td>" . $usuarioCreated->getEstado() . "</td>
+                            <td>" . $usuarioCreated->getEmail() . "</td>
                             <td>" . $usuarioValided->getValidationToken() . "</td>
-                            <td>" . $usuarioCreated->getFechaRegistro()->format("Y-m-d H:i:s") . "</td> 
+                            <td>" . $usuarioCreated->getFechaRegistro()->format("Y-m-d H:i:s") . "</td>
                             <td>" . $usuarioCreated->getUsuarioRegistro() . "</td>
                         </tr></table>";
         echo $output;
@@ -93,17 +93,17 @@ class TestCreateUserSupervisorUseCase
     {
         $supervisor = $response->getUsuario();  // CreateUserSupervisorRequest
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> 
-                        <tr> 
-                            <th>CEDULA</th> 
-                            <th>RNT</th> 
-                            <th>NOMBRES</th> 
-                            <th>FECHA REGISTRO</th> 
-                        </tr> 
+                        <table border=4>
+                        <tr>
+                            <th>CEDULA</th>
+                            <th>RNT</th>
+                            <th>NOMBRES</th>
+                            <th>FECHA REGISTRO</th>
+                        </tr>
                         <TR>
-                            <td>" . $supervisor->getCedula() . "</td> 
-                            <td>" . $supervisor->getRnt() . "</td> 
-                            <td>" . $supervisor->getNombres() . "</td> 
+                            <td>" . $supervisor->getCedula() . "</td>
+                            <td>" . $supervisor->getRnt() . "</td>
+                            <td>" . $supervisor->getNombres() . "</td>
                             <td>" . $supervisor->getFechaRegistro()->format("Y-m-d H:i:s") . "</td>
                         </tr></table>";
         echo $output;

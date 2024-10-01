@@ -1,13 +1,13 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Controllers/SessionUtility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/Login/Dto/LoginResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetRecaladas/Dto/GetRecaladasResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateAtencion/Dto/CreateAtencionRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetAtencionesByRecalada/Dto/GetAtencionesByRecaladaRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/UseCases/IGetAtencionesByRecaladaUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/UseCases/IGetRecaladasInThePortUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/InvalidPermissionException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/DependencyInjection.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/SessionUtility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/Login/Dto/LoginResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetRecaladas/Dto/GetRecaladasResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateAtencion/Dto/CreateAtencionRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetAtencionesByRecalada/Dto/GetAtencionesByRecaladaRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/UseCases/IGetAtencionesByRecaladaUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/UseCases/IGetRecaladasInThePortUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/InvalidPermissionException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/DependencyInjection.php";
 
 class CreateAtencionController
 {
@@ -56,7 +56,7 @@ class CreateAtencionController
             if (!isset($request["supervisor_id"]) || $request["supervisor_id"] < 1) {
                 $errorMessages["supervisor"] = "Es requerido";
             }
-            
+
             $fecha_inicio = DateTime::createFromFormat("Y-m-d\TH:i", @$request["fecha_inicio"]);
             if ($fecha_inicio === false) {
                 $errorMessages["inicio"] = "Formato: YYYY-MM-DD HH:MM:SS";
@@ -69,13 +69,13 @@ class CreateAtencionController
             if ($fecha_inicio < $recalada->getFechaArribo()) {
                 $errorMessages["inicio"] = "Menor que la fecha de arribo";
             }
-        
+
             if ($fecha_inicio > $recalada->getFechaZarpe()) {
                 $errorMessages["inicio"] = "Mayor que la fecha de zarpe";
             }
 
             $fecha_cierre = DateTime::createFromFormat("Y-m-d\TH:i", @$request["fecha_cierre"]);
-         
+
             if ($fecha_cierre === false) {
                 $errorMessages["cierre"] = "Formato: YYYY-MM-DD HH:MM:SS";
             }
@@ -83,7 +83,7 @@ class CreateAtencionController
             if ($fecha_cierre < $recalada->getFechaArribo()) {
                 $errorMessages["cierre"] = "Menor que la fecha de arribo";
             }
-     
+
             if ($fecha_cierre > $recalada->getFechaZarpe()) {
                 $errorMessages["cierre"] = "Mayor que la fecha de zarpe";
             }
@@ -92,7 +92,7 @@ class CreateAtencionController
                 $errorMessages["inicio"] = "Mayor que la fecha de cierre" .
                 $errorMessages["cierre"] = "Menor que la fecha de inicio";
             }
-            
+
             if ($fecha_cierre < new DateTime()) {
                 $errorMessages["cierre"] = "no puede ser menor que la fecha actual";
             }

@@ -1,13 +1,13 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Commands/CreateRecaladaCommandHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateRecalada/Dto/CreateRecaladaRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateRecalada/Dto/CreateRecaladaResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateRecalada/CreateRecaladaUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/RecaladaRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Queries/ValidateRecaladaQueryHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/invalidRecaladaException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Commands/CreateRecaladaCommandHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateRecalada/Dto/CreateRecaladaRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateRecalada/Dto/CreateRecaladaResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/CreateRecalada/CreateRecaladaUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/RecaladaRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Queries/ValidateRecaladaQueryHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/invalidRecaladaException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
 
 
 class TestCreateRecaladaUseCase
@@ -51,22 +51,22 @@ class TestCreateRecaladaUseCase
         $Recalada = $response->getRecalada();
 
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> 
-                        <tr> 
-                            <th>RECALADA ID</th> 
-                            <th>FECHA ARRIBO ID</th> 
-                            <th>FECHA DE ZARPE</th> 
-                            <th>OTAL TURISTAS</th> 
-                            <th>BUQUE ID</th> 
-                            <th>PAIS ID</th> 
+                        <table border=4>
+                        <tr>
+                            <th>RECALADA ID</th>
+                            <th>FECHA ARRIBO ID</th>
+                            <th>FECHA DE ZARPE</th>
+                            <th>OTAL TURISTAS</th>
+                            <th>BUQUE ID</th>
+                            <th>PAIS ID</th>
                         </tr>
                         <tr>
-                            <td>" . $response->getId() . "</td> 
-                            <td>" . $Recalada->getFechaArribo()->format("Y-m-d H:i:s") . "</td> 
-                            <td>" . $Recalada->getFechaZarpe()->format("Y-m-d H:i:s")  . "</td> 
-                            <td>" . $Recalada->getTotalTuristas() . "</td> 
-                            <td>" . $Recalada->getBuqueId() . "</td> 
-                            <td>" . $Recalada->getPaisId() . "</td> 
+                            <td>" . $response->getId() . "</td>
+                            <td>" . $Recalada->getFechaArribo()->format("Y-m-d H:i:s") . "</td>
+                            <td>" . $Recalada->getFechaZarpe()->format("Y-m-d H:i:s")  . "</td>
+                            <td>" . $Recalada->getTotalTuristas() . "</td>
+                            <td>" . $Recalada->getBuqueId() . "</td>
+                            <td>" . $Recalada->getPaisId() . "</td>
                         </tr>";
         $output .= "</table>";
         echo $output;

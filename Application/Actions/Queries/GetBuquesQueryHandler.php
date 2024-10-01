@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetBuques/Dto/GetBuquesResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Actions/Queries/IGetBuquesQuery.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Repositories/IBuqueRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Buque.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetBuques/Dto/GetBuquesResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Actions/Queries/IGetBuquesQuery.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Repositories/IBuqueRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Buque.php";
 
 class GetBuquesQueryHandler implements IGetBuquesQuery
 {

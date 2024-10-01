@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Supervisor.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/SupervisorRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Supervisor.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/SupervisorRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
 
 class TestSupervisorRepository
 {
@@ -97,29 +97,29 @@ class TestSupervisorRepository
     private static function showSupervisor(array $supervisores, string $title)
     {
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> <tr> 
-                          <th>USUARIO ID</th> 
-                          <th>ROL</th> 
-                          <th>CEDULA</th> 
-                          <th>NOMBRES</th> 
-                          <th>APELLIDOS</th> 
-                          <th>GENERO</th> 
-                          <th>FECHA NACIMIENTO</th> 
-                          <th>FOTO</th> 
-                          <th>OBSERVACIONES</th> 
-                          <th>ATENCIONES</th> 
+                        <table border=4> <tr>
+                          <th>USUARIO ID</th>
+                          <th>ROL</th>
+                          <th>CEDULA</th>
+                          <th>NOMBRES</th>
+                          <th>APELLIDOS</th>
+                          <th>GENERO</th>
+                          <th>FECHA NACIMIENTO</th>
+                          <th>FOTO</th>
+                          <th>OBSERVACIONES</th>
+                          <th>ATENCIONES</th>
                           </tr> ";
         foreach ($supervisores as $supervisor) {
-            $output .= "<td>" . $supervisor->usuario->id . "</td> 
-                        <td>" . $supervisor->usuario->rol->nombre . "</td> 
-                        <td>" . $supervisor->cedula . "</td> 
-                        <td>" . $supervisor->nombres . "</td> 
-                        <td>" . $supervisor->apellidos . "</td> 
-                        <td>" . $supervisor->genero . "</td> 
-                        <td>" . $supervisor->fecha_nacimiento . "</td> 
-                        <td>" . $supervisor->foto . "</td> 
-                        <td>" . $supervisor->observaciones . "</td> 
-                        <td>" . @count($supervisor->atencions) . "</td> 
+            $output .= "<td>" . $supervisor->usuario->id . "</td>
+                        <td>" . $supervisor->usuario->rol->nombre . "</td>
+                        <td>" . $supervisor->cedula . "</td>
+                        <td>" . $supervisor->nombres . "</td>
+                        <td>" . $supervisor->apellidos . "</td>
+                        <td>" . $supervisor->genero . "</td>
+                        <td>" . $supervisor->fecha_nacimiento . "</td>
+                        <td>" . $supervisor->foto . "</td>
+                        <td>" . $supervisor->observaciones . "</td>
+                        <td>" . @count($supervisor->atencions) . "</td>
                         </tr>";
         }
         $output .= "</table>";

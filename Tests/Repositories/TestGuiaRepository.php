@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Guia.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/GuiaRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Guia.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/GuiaRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
 
 class TestGuiaRepository
 {
@@ -98,29 +98,29 @@ class TestGuiaRepository
     private static function showGuias(array $guias, string $title)
     {
           $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> <tr> 
-                          <th>USUARIO ID</th> 
-                          <th>ROL</th> 
-                          <th>CEDULA</th> 
-                          <th>NOMBRES</th> 
-                          <th>APELLIDOS</th> 
-                          <th>GENERO</th> 
-                          <th>FECHA NACIMIENTO</th> 
-                          <th>FOTO</th> 
-                          <th>OBSERVACIONES</th> 
-                          <th>TURNOS</th> 
+                        <table border=4> <tr>
+                          <th>USUARIO ID</th>
+                          <th>ROL</th>
+                          <th>CEDULA</th>
+                          <th>NOMBRES</th>
+                          <th>APELLIDOS</th>
+                          <th>GENERO</th>
+                          <th>FECHA NACIMIENTO</th>
+                          <th>FOTO</th>
+                          <th>OBSERVACIONES</th>
+                          <th>TURNOS</th>
                           </tr> ";
         foreach ($guias as $guia) {
-            $output .= "<td>" . $guia->usuario->id . "</td> 
-                        <td>" . $guia->usuario->rol->nombre . "</td> 
-                        <td>" . $guia->cedula . "</td> 
-                        <td>" . $guia->nombres . "</td> 
-                        <td>" . $guia->apellidos . "</td> 
-                        <td>" . $guia->genero . "</td> 
-                        <td>" . $guia->fecha_nacimiento . "</td> 
-                        <td>" . $guia->foto . "</td> 
-                        <td>" . $guia->observaciones . "</td> 
-                        <td>" . @count($guia->turnos) . "</td> 
+            $output .= "<td>" . $guia->usuario->id . "</td>
+                        <td>" . $guia->usuario->rol->nombre . "</td>
+                        <td>" . $guia->cedula . "</td>
+                        <td>" . $guia->nombres . "</td>
+                        <td>" . $guia->apellidos . "</td>
+                        <td>" . $guia->genero . "</td>
+                        <td>" . $guia->fecha_nacimiento . "</td>
+                        <td>" . $guia->foto . "</td>
+                        <td>" . $guia->observaciones . "</td>
+                        <td>" . @count($guia->turnos) . "</td>
                         </tr>";
         }
         $output .= "</table>";

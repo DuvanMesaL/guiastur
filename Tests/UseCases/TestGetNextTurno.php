@@ -1,9 +1,9 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetNextTurno/Dto/GetNextTurnoRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetNextTurno/Dto/GetNextTurnoResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/TurnoRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Queries/GetNextTurnoQueryHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetNextTurno/GetNextTurnoUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetNextTurno/Dto/GetNextTurnoRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetNextTurno/Dto/GetNextTurnoResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/TurnoRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Queries/GetNextTurnoQueryHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetNextTurno/GetNextTurnoUseCase.php";
 
 
 class TestGetNextTurnoUseCase
@@ -31,27 +31,27 @@ class TestGetNextTurnoUseCase
     public static function showNextTurno(GetNextTurnoResponse $turno, string $title)
     {
         $output = "<hr/><h3>$title</h3>
-        <table border=4> 
-            <tr> 
-                <th>ID</th> 
-                <th>NUMERO</th> 
-                <th>USADO ID</th> 
-                <th>REGISTRÓ USO</th> 
-                <th>SALIDA</th> 
-                <th>REGISTRÓ LA SALIDA</th> 
-                <th>REGRESO</th> 
-                <th>REGISTRÓ EL REGRESO</th> 
-                <th>OBSERVACIONES</th> 
-                <th>GUIA ID</th> 
-                <th>RNT</th> 
-                <th>GUIA</th> 
-                <th>TELEFONO</th> 
-                <th>FOTO</th> 
-                <th>ATENCION ID</th> 
-                <th>FECHA INICIO</th> 
-                <th>FECHA CIERRE</th> 
-                <th>TOTAL TURNOS</th> 
-            </tr> 
+        <table border=4>
+            <tr>
+                <th>ID</th>
+                <th>NUMERO</th>
+                <th>USADO ID</th>
+                <th>REGISTRÓ USO</th>
+                <th>SALIDA</th>
+                <th>REGISTRÓ LA SALIDA</th>
+                <th>REGRESO</th>
+                <th>REGISTRÓ EL REGRESO</th>
+                <th>OBSERVACIONES</th>
+                <th>GUIA ID</th>
+                <th>RNT</th>
+                <th>GUIA</th>
+                <th>TELEFONO</th>
+                <th>FOTO</th>
+                <th>ATENCION ID</th>
+                <th>FECHA INICIO</th>
+                <th>FECHA CIERRE</th>
+                <th>TOTAL TURNOS</th>
+            </tr>
             <TR>
                 <TD>" . $turno->getId() . "</td>
                 <TD>" . $turno->getNumero() . "</td>

@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Usuario.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/UsuarioRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Usuario.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/UsuarioRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
 
 class TestUsuarioRepository
 {
@@ -47,7 +47,7 @@ class TestUsuarioRepository
             $repository = new UsuarioRepository();
             // Act
             $usuario = $repository->find(2);
-            // Assert: 
+            // Assert:
             self::showUsuarioData(array($usuario), "DATOS DEL USUARIO CON  $id");
         } catch (Exception $e) {
             echo '<hr><span style="color: red">ERROR BUSCAR EL USUARIO <br></span>';
@@ -63,8 +63,8 @@ class TestUsuarioRepository
             $repository = new UsuarioRepository();
             // Act
             $usuario = $repository->findByEmail($email);
-            // Assert: 
-            // Assert: 
+            // Assert:
+            // Assert:
             self::showUsuarioData(array($usuario), "DATOS DEL USUARIO CON EMAIL $email");
         } catch (Exception $e) {
             echo '<hr><span style="color: red">ERROR BUSCAR EL USUARIO <br></span>';
@@ -85,7 +85,7 @@ class TestUsuarioRepository
             $usuario->password = "xxxfulan***";
             //act
             $usuario = $repository->update($usuario);
-            // Assert: 
+            // Assert:
             self::showUsuarioData(array($usuario), "DATOS DEL USUARIO $Id DE TODOS LOS USUARIOS");
         } catch (Exception $e) {
             echo '<hr><span style="color: red">ERROR ACTUALIZAR EL USUARIO <br></span>';
@@ -101,7 +101,7 @@ class TestUsuarioRepository
             $repository = new UsuarioRepository();
             // Act
             $resul = $repository->delete($id);
-            // Assert: 
+            // Assert:
             echo $resul ? "Usuario eliminado" : "Usuario no eliminado";
         } catch (Exception $e) {
             echo '<hr><span style="color: red">ERROR LISTAR TODOS LOS USUARIOS <br></span>';
@@ -116,7 +116,7 @@ class TestUsuarioRepository
             $repository = new UsuarioRepository();
             // Act
             $userList = $repository->findAll();
-            // assert 
+            // assert
             if (!isset($userList) || @count($userList) == 0) {
                 echo '<hr><span style="color: red">NO EXISTEN USUARIOS PARA MOSTRAR<br></span>';
                 return;
@@ -132,23 +132,23 @@ class TestUsuarioRepository
     private static function showUsuarioData($usuarios, string $title)
     {
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> <tr> 
-                          <th>USUARIO ID</th> 
-                          <th>EMAIL</th> 
-                          <th>NOMBRE</th> 
-                          <th>ESTADO</th> 
-                          <th>TOKEN DE VALIDACION</th> 
-                          <th>ROL ID</th> 
-                          <th>ROL</th> 
+                        <table border=4> <tr>
+                          <th>USUARIO ID</th>
+                          <th>EMAIL</th>
+                          <th>NOMBRE</th>
+                          <th>ESTADO</th>
+                          <th>TOKEN DE VALIDACION</th>
+                          <th>ROL ID</th>
+                          <th>ROL</th>
                           </tr> ";
         foreach ($usuarios as $usuario) {
-            $output .= "<td>" . $usuario->id . "</td> 
-                        <td>" . $usuario->email . "</td> 
-                        <td>" . $usuario->nombre . "</td> 
-                        <td>" . $usuario->estado . "</td> 
-                        <td>" . $usuario->validation_token . "</td> 
-                        <td>" . $usuario->rol_id . "</td> 
-                        <td>" . $usuario->rol->nombre . "</td> 
+            $output .= "<td>" . $usuario->id . "</td>
+                        <td>" . $usuario->email . "</td>
+                        <td>" . $usuario->nombre . "</td>
+                        <td>" . $usuario->estado . "</td>
+                        <td>" . $usuario->validation_token . "</td>
+                        <td>" . $usuario->rol_id . "</td>
+                        <td>" . $usuario->rol->nombre . "</td>
                         </tr> ";
         }
         $output .= "</table>";

@@ -1,9 +1,9 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/BuqueRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Queries/GetBuqueByIdQueryHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetBuqueById/GetBuqueByIdUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetBuqueById/Dto/GetBuqueByIdRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetBuqueById/Dto/GetBuqueByIdResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/BuqueRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Queries/GetBuqueByIdQueryHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetBuqueById/GetBuqueByIdUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetBuqueById/Dto/GetBuqueByIdRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetBuqueById/Dto/GetBuqueByIdResponse.php";
 
 class TestGetBuqueByIdUseCase
 {
@@ -30,20 +30,20 @@ class TestGetBuqueByIdUseCase
     public static function showBuqueData($buques, string $title)
     {
         $output = "<hr/><h3>$title</h3>
-        <table border=4> <tr> 
-          <th>BUQUE ID</th> 
-          <th>CODIGO</th> 
-          <th>NOMBRE ID</th> 
-          <th>FOTO</th> 
-          <th>RECALADAS</th> 
-          <th>ATENCIONES</th> 
+        <table border=4> <tr>
+          <th>BUQUE ID</th>
+          <th>CODIGO</th>
+          <th>NOMBRE ID</th>
+          <th>FOTO</th>
+          <th>RECALADAS</th>
+          <th>ATENCIONES</th>
           </tr> ";
         foreach ($buques as $buque) {
-            $output .= "<tr><td>" . $buque->getId() . "</td> 
-            <td>" . $buque->getCodigo() . "</td> 
-            <td>" . $buque->getNombre() . "</td> 
-            <td>" . $buque->getFoto() . "</td> 
-            <td>" . $buque->getTotalRecaladas() . "</td> 
+            $output .= "<tr><td>" . $buque->getId() . "</td>
+            <td>" . $buque->getCodigo() . "</td>
+            <td>" . $buque->getNombre() . "</td>
+            <td>" . $buque->getFoto() . "</td>
+            <td>" . $buque->getTotalRecaladas() . "</td>
             <td>" . $buque->getTotalAtenciones() . "</td></tr>";
         }
         $output .= "</table>";

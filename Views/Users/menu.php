@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Controllers/SessionUtility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/SessionUtility.php";
 SessionUtility::startSession();
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ SessionUtility::startSession();
         Menú para Usuarios
     </div>
     <?php
-    require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Controllers/SessionUtility.php";
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/SessionUtility.php";
     $baseUrl = UrlHelper::getUrlBase();
     ?>
     <div class="hamburger" id="hamburger"></div>

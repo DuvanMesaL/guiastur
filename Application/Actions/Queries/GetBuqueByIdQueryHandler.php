@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetBuqueById/Dto/GetBuqueByIdRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetBuqueById/Dto/GetBuqueByIdResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Actions/Queries/IGetBuqueByIdQuery.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/Repositories/IBuqueRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetBuqueById/Dto/GetBuqueByIdRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetBuqueById/Dto/GetBuqueByIdResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Actions/Queries/IGetBuqueByIdQuery.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/Repositories/IBuqueRepository.php";
 class GetBuqueByIdQueryHandler implements IGetBuqueByIdQuery
 {
 
@@ -22,7 +22,7 @@ class GetBuqueByIdQueryHandler implements IGetBuqueByIdQuery
             $atencionList = $recalada->atencions;
             $atenciones += @count($atencionList);
         }
-        
+
         $getBuqueByIdResponse = new GetBuqueByIdResponse(
             $buque->id,
             $buque->codigo,

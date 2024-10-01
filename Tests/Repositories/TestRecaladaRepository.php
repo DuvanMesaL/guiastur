@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Recalada.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/RecaladaRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Recalada.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/RecaladaRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
 
 class TestRecaladaRepository
 {
@@ -100,7 +100,7 @@ class TestRecaladaRepository
             $repository = new RecaladaRepository();
             // Act
             $isValidate = $repository->validateRecalada($buqueId, $fecha);
-            // Assert 
+            // Assert
             if ($isValidate) {
                 echo '<hr><span style="color: green"> La Recalada es validad para ' . $fecha->format("Y-m-d H:i:s") . '<br></span>';
             } else {
@@ -129,24 +129,24 @@ class TestRecaladaRepository
     {
 
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> <tr> 
-                          <th>BUQUE ID</th> 
-                          <th>NOMBRE</th> 
-                          <th>RECALADA ID</th> 
-                          <th>ARRIBO</th> 
-                          <th>ZARPE</th> 
-                          <th>TURISTAS</th> 
-                          <th>ORIGEN</th> 
-                          <th>ATENCIONES</th> 
+                        <table border=4> <tr>
+                          <th>BUQUE ID</th>
+                          <th>NOMBRE</th>
+                          <th>RECALADA ID</th>
+                          <th>ARRIBO</th>
+                          <th>ZARPE</th>
+                          <th>TURISTAS</th>
+                          <th>ORIGEN</th>
+                          <th>ATENCIONES</th>
                           </tr> ";
         foreach ($recaladas as $Recalada) {
-            $output .= "<td>" . $Recalada->buque->id . "</td> 
-                        <td>" . $Recalada->buque->nombre . "</td> 
-                        <td>" . $Recalada->id . "</td> 
-                        <td>" . $Recalada->fecha_arribo . "</td> 
-                        <td>" . $Recalada->fecha_zarpe . "</td> 
-                        <td>" . $Recalada->total_turistas . "</td> 
-                        <td>" . $Recalada->pais->nombre . "</td> 
+            $output .= "<td>" . $Recalada->buque->id . "</td>
+                        <td>" . $Recalada->buque->nombre . "</td>
+                        <td>" . $Recalada->id . "</td>
+                        <td>" . $Recalada->fecha_arribo . "</td>
+                        <td>" . $Recalada->fecha_zarpe . "</td>
+                        <td>" . $Recalada->total_turistas . "</td>
+                        <td>" . $Recalada->pais->nombre . "</td>
                         <td>" . @count($Recalada->atencions) . "</td> </tr>";
 
         }

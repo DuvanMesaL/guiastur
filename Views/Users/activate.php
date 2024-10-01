@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetUsusarioByToken/Dto/GetUsuarioByTokenResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Controllers/SessionUtility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/RolTypeEnum.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetUsusarioByToken/Dto/GetUsuarioByTokenResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/SessionUtility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Constants/RolTypeEnum.php";
 
 SessionUtility::startSession();
 $erroMessage = @$_SESSION[ItemsInSessionEnum::ERROR_MESSAGE] ?? null;
@@ -85,9 +85,9 @@ $userActivating = @$_SESSION[ItemsInSessionEnum::USER_ACTIVATING] ?? null;
                     </div>
                     <div class="form-group">
                         <label for="nombres">NOMBRES:</label>
-                        <input type="text" id="nombres" name="nombres" 
+                        <input type="text" id="nombres" name="nombres"
                             <?= ($userActivating->getRolNombre() !== RolTypeEnum::GUIA && $userActivating->getRolNombre() !== RolTypeEnum::SUPERVISOR) ? "readonly" : "" ?>
-                            value="<?= isset($userActivating) ? $userActivating->getNombre() : "" ?>"> 
+                            value="<?= isset($userActivating) ? $userActivating->getNombre() : "" ?>">
                             <span style="color: red"><?= @$erroMessages["nombre"] ?? "" ?></span>
                     </div>
                     <?php if ($userActivating->getRolNombre() === RolTypeEnum::GUIA || $userActivating->getRolNombre() === RolTypeEnum::SUPERVISOR): ?>

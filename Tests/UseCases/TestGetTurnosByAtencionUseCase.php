@@ -1,10 +1,10 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetTurnosByAtencion/Dto/GetTurnosByAtencionRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetTurnosByAtencion/Dto/GetTurnosByAtencionResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetTurnosByAtencion/GetTurnosByAtencion.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Queries/GetTurnosByAtencionQueryHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/TurnoRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/NotFoundEntryException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetTurnosByAtencion/Dto/GetTurnosByAtencionRequest.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetTurnosByAtencion/Dto/GetTurnosByAtencionResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GetTurnosByAtencion/GetTurnosByAtencion.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Actions/Queries/GetTurnosByAtencionQueryHandler.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/TurnoRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/NotFoundEntryException.php";
 
 class TestGetTunosByAtencionUseCase
 {
@@ -30,47 +30,47 @@ class TestGetTunosByAtencionUseCase
         $turnos = $response->getTurnos();
 
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                    <table border=4> 
-                        <tr> 
-                            <th>ATENCION ID</th> 
-                            <th>TOTAL TURNOS</th> 
-                        </tr> 
+                    <table border=4>
+                        <tr>
+                            <th>ATENCION ID</th>
+                            <th>TOTAL TURNOS</th>
+                        </tr>
                         <TR>
-                            <td>" . $response->getAtencionId() . "</td> 
-                            <td>" . $response->getTotalTurnos() . "</td> 
+                            <td>" . $response->getAtencionId() . "</td>
+                            <td>" . $response->getTotalTurnos() . "</td>
                         </tr>
                     </table>
-                    
+
                 <hr/><h3 style='color: blue;'>TURNOS</h3>
-                    <table border=4> 
-                        <tr> 
-                            <th>TURNO ID</th> 
-                            <th>NUMERO</th> 
-                            <th>ESTADO</th> 
-                            <th>GUIA CC</th> 
-                            <th>USADO</th> 
-                            <th>REGISTRÓ USO</th> 
-                            <th>LIBERADO</th> 
-                            <th>REGISTRÓ SALIDA</th> 
-                            <th>TERMINADO</th> 
-                            <th>REGISTRÓ REGRESO</th>  
-                            <th>CREADO</th> 
-                            <th>CREADO POR</th> 
+                    <table border=4>
+                        <tr>
+                            <th>TURNO ID</th>
+                            <th>NUMERO</th>
+                            <th>ESTADO</th>
+                            <th>GUIA CC</th>
+                            <th>USADO</th>
+                            <th>REGISTRÓ USO</th>
+                            <th>LIBERADO</th>
+                            <th>REGISTRÓ SALIDA</th>
+                            <th>TERMINADO</th>
+                            <th>REGISTRÓ REGRESO</th>
+                            <th>CREADO</th>
+                            <th>CREADO POR</th>
                         </tr> ";
         foreach ($turnos as $turno) {
-            $output .= "<tr> 
-                            <td>" . $turno->getId() . "</td> 
-                            <td>" . $turno->getNumero() . "</td> 
-                            <td>" . $turno->getEstado() . "</td> 
-                            <td>" . $turno->getGuiaId() . "</td> 
-                            <td>" . (($turno->getFechaUso())?$turno->getFechaUso()->format("Y-md H:i:s") : "")."</td> 
-                            <td>" . $turno->getUsuarioUso() . "</td> 
-                            <td>" . (($turno->getFechaSalida())?$turno->getFechaSalida()->format("Y-md H:i:s") : "")."</td> 
+            $output .= "<tr>
+                            <td>" . $turno->getId() . "</td>
+                            <td>" . $turno->getNumero() . "</td>
+                            <td>" . $turno->getEstado() . "</td>
+                            <td>" . $turno->getGuiaId() . "</td>
+                            <td>" . (($turno->getFechaUso())?$turno->getFechaUso()->format("Y-md H:i:s") : "")."</td>
+                            <td>" . $turno->getUsuarioUso() . "</td>
+                            <td>" . (($turno->getFechaSalida())?$turno->getFechaSalida()->format("Y-md H:i:s") : "")."</td>
                             <td>" . $turno->getUsuarioSalida() . "</td>
-                            <td>" . (($turno->getFechaRegreso())?$turno->getFechaRegreso()->format("Y-md H:i:s") : "")."</td> 
+                            <td>" . (($turno->getFechaRegreso())?$turno->getFechaRegreso()->format("Y-md H:i:s") : "")."</td>
                             <td>" . $turno->getUsuarioRegreso() . "</td>
-                            <td>" . $turno->getObservaciones() . "</td> 
-                            <td>" . (($turno->getFechaRegistro())?$turno->getFechaRegistro()->format("Y-md H:i:s") : "")."</td> 
+                            <td>" . $turno->getObservaciones() . "</td>
+                            <td>" . (($turno->getFechaRegistro())?$turno->getFechaRegistro()->format("Y-md H:i:s") : "")."</td>
                             <td>" . $turno->getUsuarioRegistro() . "</td>
                         </tr> ";
         }

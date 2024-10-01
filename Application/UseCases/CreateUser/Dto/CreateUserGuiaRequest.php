@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/UsuarioStatusEnum.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Constants/UsuarioStatusEnum.php";
 require_once __DIR__ ."/CreateUserResponse.php";
 class CreateUserGuiaRequest extends CreateUserResponse
 {
@@ -165,5 +165,5 @@ class CreateUserGuiaRequest extends CreateUserResponse
     public function getFoto(){
         return $this->foto;
     }
-    
+
 }

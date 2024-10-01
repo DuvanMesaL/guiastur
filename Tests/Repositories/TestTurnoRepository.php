@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Turno.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/TurnoRepository.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/Utility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/EntityReferenceNotFoundException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Domain/Entities/Turno.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/TurnoRepository.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Repositories/Utility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/EntityReferenceNotFoundException.php";
 
 class TestTurnoRepository
 {
@@ -141,39 +141,39 @@ class TestTurnoRepository
     private static function showTunosData($turnos, string $title)
     {
         $output = "<hr/><h3 style='color: blue;'>$title</h3>
-                        <table border=4> <tr> 
-                          <th>TURNO ID</th> 
-                          <th>NUMERO</th> 
-                          <th>ESTADO</th> 
-                          <th>GUIA CC</th> 
-                          <th>NOMBRE</th> 
-                          <th>USADO</th> 
-                          <th>LIBERADO</th> 
-                          <th>TERMINADO</th> 
-                          <th>CREADO POR</th> 
-                          <th>BUQUE ID</th> 
-                          <th>BUQUE NOMBRE</th> 
-                          <th>RECALADA ID</th> 
-                          <th>ATENCION ID</th> 
-                          <th>SUPERVISOR</th> 
-                          <th>SUPERVISOR NOMBRE</th> 
+                        <table border=4> <tr>
+                          <th>TURNO ID</th>
+                          <th>NUMERO</th>
+                          <th>ESTADO</th>
+                          <th>GUIA CC</th>
+                          <th>NOMBRE</th>
+                          <th>USADO</th>
+                          <th>LIBERADO</th>
+                          <th>TERMINADO</th>
+                          <th>CREADO POR</th>
+                          <th>BUQUE ID</th>
+                          <th>BUQUE NOMBRE</th>
+                          <th>RECALADA ID</th>
+                          <th>ATENCION ID</th>
+                          <th>SUPERVISOR</th>
+                          <th>SUPERVISOR NOMBRE</th>
                           </tr> ";
         foreach ($turnos as $turno) {
-            $output .= "<td>" . $turno->id . "</td> 
-                        <td>" . $turno->numero . "</td> 
-                        <td>" . $turno->estado . "</td> 
-                        <td>" . $turno->guia_id . "</td> 
-                        <td>" . $turno->guia->nombres . " " . $turno->guia->apellidos . "</td> 
-                        <td>" . $turno->fecha_uso . "</td> 
-                        <td>" . $turno->fecha_salida . "</td> 
-                        <td>" . $turno->fecha_regreso . "</td> 
-                        <td>" . $turno->usuario_registro . "</td> 
-                        <td>" . $turno->atencion->recalada->buque->id . "</td> 
-                        <td>" . $turno->atencion->recalada->buque->nombre . "</td> 
-                        <td>" . $turno->atencion->recalada->id . "</td> 
-                        <td>" . $turno->atencion->id . "</td> 
-                        <td>" . $turno->atencion->supervisor->cedula . "</td> 
-                        <td>" . $turno->atencion->supervisor->nombres . " " . $turno->atencion->supervisor->apellidos . "</td> 
+            $output .= "<td>" . $turno->id . "</td>
+                        <td>" . $turno->numero . "</td>
+                        <td>" . $turno->estado . "</td>
+                        <td>" . $turno->guia_id . "</td>
+                        <td>" . $turno->guia->nombres . " " . $turno->guia->apellidos . "</td>
+                        <td>" . $turno->fecha_uso . "</td>
+                        <td>" . $turno->fecha_salida . "</td>
+                        <td>" . $turno->fecha_regreso . "</td>
+                        <td>" . $turno->usuario_registro . "</td>
+                        <td>" . $turno->atencion->recalada->buque->id . "</td>
+                        <td>" . $turno->atencion->recalada->buque->nombre . "</td>
+                        <td>" . $turno->atencion->recalada->id . "</td>
+                        <td>" . $turno->atencion->id . "</td>
+                        <td>" . $turno->atencion->supervisor->cedula . "</td>
+                        <td>" . $turno->atencion->supervisor->nombres . " " . $turno->atencion->supervisor->apellidos . "</td>
                         </tr> ";
         }
         $output .= "</table>";

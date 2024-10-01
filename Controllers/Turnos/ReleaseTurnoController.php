@@ -1,11 +1,11 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Controllers/SessionUtility.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/Login/Dto/LoginResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/ReleaseTurno/Dto/ReleaseTurnoResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/ReleaseTurno/Dto/ReleaseTurnoResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Contracts/UseCases/IReleaseTurnoUseCase.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/InvalidPermissionException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/DependencyInjection.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/SessionUtility.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/Login/Dto/LoginResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/ReleaseTurno/Dto/ReleaseTurnoResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/ReleaseTurno/Dto/ReleaseTurnoResponse.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Contracts/UseCases/IReleaseTurnoUseCase.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/Exceptions/InvalidPermissionException.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/DependencyInjection.php";
 
 class ReleaseTurnoController
 {
@@ -38,7 +38,7 @@ class ReleaseTurnoController
             if ($loginUser === null) {
                 throw new InvalidPermissionException("Carece de los permisos necesarios");
             }
-         
+
             $releasetunroRequest = new ReleaseTurnoRequest(
                 $request["turnoid"],
                 $loginUser->getId(),

@@ -1,11 +1,11 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GenericDto.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Application/UseCases/GenericDto.php";
 
 class CreateTurnoRequest extends GenericDto
 {
     private $numero;
     private $estado;
-  
+
     private $observaciones;
     private $guia_id;
     private $atencion_id;
@@ -61,25 +61,25 @@ class CreateTurnoRequest extends GenericDto
         return $this->guia_id;
     }
 
-    public function getEstado() 
+    public function getEstado()
     {
         return $this->estado;
     }
 
 
-    public function getObservaciones() 
+    public function getObservaciones()
     {
         return $this->observaciones;
     }
 
 
-    public function getFechaRegistro() 
+    public function getFechaRegistro()
     {
         return $this->fecha_registro;
     }
 
 
-    public function getUsuarioRegistro() 
+    public function getUsuarioRegistro()
     {
         return $this->usuario_registro;
     }
