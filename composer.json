@@ -1,4 +1,6 @@
 {
+    "name": "guiastur-api-Heroku",
+    "description": "Proyecto PHP para Heroku",
     "require": {
         "firebase/php-jwt": "^6.10"
     }
