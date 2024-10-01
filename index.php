@@ -13,7 +13,7 @@ switch ($uri) {
         break;
 
     case '/api/recaladas/create':
-        require __DIR__ . '/api/routes/Recaladas/CreateRecalada.php';
+        require __DIR__ . '\api\routes\Recaladas\CreateRecalada.php';
         break;
     case '/api/paises':
         require __DIR__ . '/api/routes/Recaladas/Getpaises.php';
