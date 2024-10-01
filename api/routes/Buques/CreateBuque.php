@@ -4,7 +4,7 @@ namespace Api\Routes\Endopoint\Buques;
 
 use Api\Controllers\Buques\CreateBuqueMobileController;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/controllers/Buques/CreateBuqueMobileController.php";
+require_once __DIR__ . '/../../controllers/Buques/CreateBuqueMobileController.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, DELETE");

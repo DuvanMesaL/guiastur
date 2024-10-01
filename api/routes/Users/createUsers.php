@@ -4,7 +4,7 @@ namespace Api\Routes\Endopoint\Users;
 
 use Api\Controllers\Users\CreateUserMobileController;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/controllers/Users/CreateUserMobileController.php";
+require_once __DIR__ . '/../../controllers/Users/CreateUserMobileController.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, DELETE");

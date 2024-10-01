@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/DependencyInjection.php";
+require_once __DIR__ . '/../../../DependencyInjection.php';
 
 try {
     $rolesService = DependencyInjection::getRolesServce();

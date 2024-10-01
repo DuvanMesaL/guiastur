@@ -2,7 +2,7 @@
 
 use Api\Controllers\Buques\GetBuquesMobileControllerApi;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/controllers/Buques/GetBuquesMobileControllerApi.php";
+require_once __DIR__ . '/../../controllers/Buques/GetBuquesMobileControllerApi.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, DELETE");

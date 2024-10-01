@@ -4,7 +4,7 @@ namespace Api\Routes\Endopoint\Users;
 
 use Api\Controllers\Users\LoginController;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/controllers/Users/LoginMobileController.php";
+require_once __DIR__ . "/../../controllers/Users/LoginMobileController.php";
 
 // Configuración de cabeceras para CORS
 header("Access-Control-Allow-Origin: *");
