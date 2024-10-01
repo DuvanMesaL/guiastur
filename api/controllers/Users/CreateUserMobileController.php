@@ -2,13 +2,13 @@
 
 namespace Api\Controllers\Users;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Auth/AuthService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Users/UserService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Emails/EmailService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Utilities/UtilityService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Request/RequestMiddleware.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Authorization/AuthorizationMiddleware.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Response/ResponseMiddleware.php";
+require_once __DIR__ . '/../../services/Auth/AuthService.php';
+require_once __DIR__ . '/../../services/Users/UserService.php';
+require_once __DIR__ . '/../../services/Emails/EmailService.php';
+require_once __DIR__ . '/../../services/Utilities/UtilityService.php';
+require_once __DIR__ . '/../../middleware/Request/RequestMiddleware.php';
+require_once __DIR__ . '/../../middleware/Authorization/AuthorizationMiddleware.php';
+require_once __DIR__ . '/../../middleware/Response/ResponseMiddleware.php';
 
 use Api\Services\Auth\AuthService;
 use Api\Services\UserService;

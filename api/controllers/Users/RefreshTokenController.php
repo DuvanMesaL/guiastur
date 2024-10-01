@@ -8,11 +8,11 @@ use Api\Services\Auth\TokenService;
 use Api\Helpers\CookiesSetup;
 use Api\Exceptions\UnauthorizedException;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Auth/TokenService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Users/UserService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/HTTP/ResponseService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Helpers/CookiesSetup.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Exceptions/UnauthorizedException.php";
+require_once __DIR__ . '/../../services/Auth/TokenService.php';
+require_once __DIR__ . '/../../services/Users/UserService.php';
+require_once __DIR__ . '/../../services/HTTP/ResponseService.php';
+require_once __DIR__ . '/../../Helpers/CookiesSetup.php';
+require_once __DIR__ . '/../../Exceptions/UnauthorizedException.php';
 
 class RefreshTokenController
 {

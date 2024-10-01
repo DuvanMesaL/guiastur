@@ -6,11 +6,11 @@ use Api\Services\Auth\AuthService;
 use Api\Middleware\Response\ResponseMiddleware;
 use Api\Middleware\Authorization\AuthorizationMiddleware;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Auth/AuthService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Authorization/AuthorizationMiddleware.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Response/ResponseMiddleware.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Auth/AuthService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/DependencyInjection.php";
+require_once __DIR__ . '/../../services/Auth/AuthService.php';
+require_once __DIR__ . '/../../middleware/Authorization/AuthorizationMiddleware.php';
+require_once __DIR__ . '/../../middleware/Response/ResponseMiddleware.php';
+require_once __DIR__ . '/../../services/Auth/AuthService.php';
+require_once __DIR__ . '/../../../DependencyInjection.php';
 
 class GetBuquesMobileControllerApi
 {

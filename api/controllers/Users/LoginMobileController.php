@@ -2,10 +2,10 @@
 
 namespace Api\Controllers\Users;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Helpers/JWTHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Helpers/CookiesSetup.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Exceptions/UnauthorizedException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Services/Auth/LoginService.php";
+require_once __DIR__ . '/../../Helpers/JWTHandler.php';
+require_once __DIR__ . '/../../Helpers/CookiesSetup.php';
+require_once __DIR__ . '/../../Exceptions/UnauthorizedException.php';
+require_once __DIR__ . '/../../Services/Auth/LoginService.php';
 
 use Api\Exceptions\UnauthorizedException;
 use Api\Helpers\JWTHandler;

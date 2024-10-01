@@ -5,10 +5,10 @@ namespace Api\Controllers\Recaladas;
 use Api\Middleware\Response\ResponseMiddleware;
 use Exception;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Response/ResponseMiddleware.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/GetPaises/GetPaisesService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Actions/Queries/GetPaisesQueryHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Repositories/PaisRepository.php";
+require_once __DIR__ . '/../../middleware/Response/ResponseMiddleware.php';
+require_once __DIR__ . '/../../../Application/UseCases/GetPaises/GetPaisesService.php';
+require_once __DIR__ . '/../../../Application/Actions/Queries/GetPaisesQueryHandler.php';
+require_once __DIR__ . '/../../../Infrastructure/Repositories/PaisRepository.php';
 
 class GetPaisesMobileController
 {

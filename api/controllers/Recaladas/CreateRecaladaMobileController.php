@@ -7,12 +7,12 @@ use Api\Middleware\Response\ResponseMiddleware;
 use Api\Middleware\Request\RequestMiddleware;
 use Api\Services\Auth\AuthService;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/services/Auth/AuthService.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Request/RequestMiddleware.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Authorization/AuthorizationMiddleware.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/middleware/Response/ResponseMiddleware.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateRecalada/Dto/CreateRecaladaRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/DependencyInjection.php";
+require_once __DIR__ . '/../../services/Auth/AuthService.php';
+require_once __DIR__ . '/../../middleware/Request/RequestMiddleware.php';
+require_once __DIR__ . '/../../middleware/Authorization/AuthorizationMiddleware.php';
+require_once __DIR__ . '/../../middleware/Response/ResponseMiddleware.php';
+require_once __DIR__ . '/../../../Application/UseCases/CreateRecalada/Dto/CreateRecaladaRequest.php';
+require_once __DIR__ . '/../../../DependencyInjection.php';
 
 class CreateRecaladaMobileController
 {
