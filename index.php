@@ -6,31 +6,31 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($uri) {
     case '/api/buques/create':
-        require_once $_SERVER["DOCUMENT_ROOT"] . '/guiastur/api/routes/Buques/CreateBuque.php';
+        require_once __DIR__ . '/api/routes/Buques/CreateBuque.php';
         break;
     case '/api/buques':
-        require_once $_SERVER["DOCUMENT_ROOT"] . '/guiastur/api/routes/Buques/GetBuques.php';
+        require_once __DIR__ . '/api/routes/Buques/GetBuques.php';
         break;
     case '/api/recaladas/create':
-        require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/routes/Recaladas/CreateRecalada.php";
+        require_once __DIR__ . '/api/routes/Recaladas/CreateRecalada.php';
         break;
     case '/api/paises':
-        require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/routes//Recaladas/Getpaises.php";
+        require_once __DIR__ . '/api/routes/Recaladas/Getpaises.php';
         break;
     case '/api/users/create':
-        require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/routes/Users/createUsers.php";
+        require_once __DIR__ . '/api/routes/Users/createUsers.php';
         break;
     case '/api/users/login':
-        require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/routes/Users/login.php";
+        require_once __DIR__ . '/api/routes/Users/login.php';
         break;
     case '/api/users/logout':
-        require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/routes/Users/logout.php";
+        require_once __DIR__ . '/api/routes/Users/logout.php';
         break;
     case '/api/users/refresh':
-        require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/routes/Users/refreshtoken.php";
+        require_once __DIR__ . '/api/routes/Users/refreshtoken.php';
         break;
     case '/api/users/roles':
-        require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/routes/Users/roles.php";
+        require_once __DIR__ . '/api/routes/Users/roles.php';
         break;
 
     default:
