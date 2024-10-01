@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/ClassLoader.php";
+require_once __DIR__. "/config.php";
 class DependencyInjection
 {
     public static function getCreateRecaladaServce(): ICreateRecaladaUseCase
