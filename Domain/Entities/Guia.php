@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"]."/guiastur/Infrastructure/Libs/Orm/Config.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Infrastructure/Libs/Orm/Config.php";
 
 class Guia  extends  ActiveRecord\Model {
     public static $primary_key = "cedula";
