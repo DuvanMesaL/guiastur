@@ -4,8 +4,9 @@ namespace Api\Models;
 
 use ActiveRecord\Model;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Libs/Orm/activerecord/ActiveRecord.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Libs/Orm/Config.php";
+require_once __DIR__ . "/../../Infrastructure/Libs/Orm/activerecord/ActiveRecord.php";
+require_once __DIR__ . "/../../Infrastructure/Libs/Orm/Config.php";
+
 
 class UserToken extends Model
 {

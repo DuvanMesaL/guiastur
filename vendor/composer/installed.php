@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'duvanmesa/guiastur-api',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '21a9c7ff43be575069fdd97d648a814f7124e5b3',
+        'reference' => 'a29500332aa36a525fec72a1ab5f8e1931173a38',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
+        'duvanmesa/guiastur-api' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '21a9c7ff43be575069fdd97d648a814f7124e5b3',
+            'reference' => 'a29500332aa36a525fec72a1ab5f8e1931173a38',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
