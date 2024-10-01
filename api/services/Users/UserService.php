@@ -4,11 +4,12 @@ namespace Api\Services;
 
 use Usuario;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/Usuario.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateUser/Dto/CreateUserRequest.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/CreateUser/Dto/CreateUserResponse.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/RolTypeEnum.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/InvalidPermissionException.php";
+require_once __DIR__ . '/../../../Domain/Entities/Usuario.php';
+require_once __DIR__ . '/../../../Application/UseCases/CreateUser/Dto/CreateUserRequest.php';
+require_once __DIR__ . '/../../../Application/UseCases/CreateUser/Dto/CreateUserResponse.php';
+require_once __DIR__ . '/../../../Application/UseCases/CreateUser/Dto/CreateUserResponse.php';
+require_once __DIR__ . '/../../../Domain/Constants/RolTypeEnum.php';
+require_once __DIR__ . '/../../../Application/Exceptions/InvalidPermissionException.php';
 
 class UserService
 {

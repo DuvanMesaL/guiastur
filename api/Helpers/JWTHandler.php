@@ -6,9 +6,9 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Api\Models\UserToken;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/vendor/autoload.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Infrastructure/Libs/Orm/Config.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/UserToken.php";
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../Infrastructure/Libs/Orm/Config.php';
+require_once __DIR__ . '/../../Domain/Entities/UserToken.php';
 
 class JWTHandler
 {

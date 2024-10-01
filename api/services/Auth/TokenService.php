@@ -6,9 +6,9 @@ use Api\Helpers\JWTHandler;
 use Api\Models\UserToken;
 use Api\Exceptions\UnauthorizedException;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Helpers/JWTHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Exceptions/UnauthorizedException.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Entities/UserToken.php";
+require_once __DIR__ . '/../../Helpers/JWTHandler.php';
+require_once __DIR__ . '/../../Exceptions/UnauthorizedException.php';
+require_once __DIR__ . '/../../../Domain/Entities/UserToken.php';
 
 class TokenService
 {

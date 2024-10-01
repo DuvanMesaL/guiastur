@@ -2,9 +2,9 @@
 
 namespace Api\Services\Emails;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Model/EmailDestinationModel.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/DependencyInjection.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Controllers/SessionUtility.php";
+require_once __DIR__ . '/../../../Domain/Model/EmailDestinationModel.php';
+require_once __DIR__ . '/../../../DependencyInjection.php';
+require_once __DIR__ . '/../../../Controllers/SessionUtility.php';
 
 class EmailService
 {

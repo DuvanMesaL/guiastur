@@ -2,8 +2,8 @@
 
 namespace Api\Services\Auth;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/DependencyInjection.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/UseCases/Login/Dto/LoginRequest.php";
+require_once __DIR__ . '/../../../DependencyInjection.php';
+require_once __DIR__ . '/../../../Application/UseCases/Login/Dto/LoginRequest.php';
 
 use Api\Exceptions\UnauthorizedException;
 

@@ -2,9 +2,9 @@
 
 namespace Api\Services\Auth;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/api/Helpers/JWTHandler.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Domain/Constants/RolTypeEnum.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/guiastur/Application/Exceptions/InvalidPermissionException.php";
+require_once __DIR__ . '/../../Helpers/JWTHandler.php';
+require_once __DIR__ . '/../../../Domain/Constants/RolTypeEnum.php';
+require_once __DIR__ . '/../../../Application/Exceptions/InvalidPermissionException.php';
 
 use Api\Helpers\JWTHandler;
 
