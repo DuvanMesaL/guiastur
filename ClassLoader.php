@@ -53,7 +53,7 @@ class ClassLoader
         'GetRecaladaByIdQueryHandler' => 'Application/Actions/Queries/GetRecaladaByIdQueryHandler.php',
         'GetSupervisoresQueryHandler' => 'Application/Actions/Queries/GetSupervisoresQueryHandler.php',
         'GetAtencionByIdQueryHandler' => 'Application/Actions/Queries/GetAtencionByIdQueryHandler.php',
-       
+
         // Application UseCases
         'CreateAtencionUseCase' => 'Application/UseCases/CreateAtencion/CreateAtencionUseCase.php',
         'CreateBuqueUseCase' => 'Application/UseCases/CreateBuque/CreateBuqueUseCase.php',
@@ -83,7 +83,7 @@ class ClassLoader
     public static function loadClass($className)
     {
         if (isset(self::$classMap[$className])) {
-            $baseDir = $_SERVER["DOCUMENT_ROOT"] . "/guiastur/";
+            $baseDir = __DIR__ ."/guiastur/";
             require_once $baseDir . self::$classMap[$className];
         } else {
             throw new Exception("Class $className not found in class map.");
