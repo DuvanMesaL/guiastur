@@ -83,7 +83,7 @@ class ClassLoader
     public static function loadClass($className)
     {
         if (isset(self::$classMap[$className])) {
-            $baseDir = __DIR__ ."/guiastur/";
+            $baseDir = $_SERVER["DOCUMENT_ROOT"] ."/";
             require_once $baseDir . self::$classMap[$className];
         } else {
             throw new Exception("Class $className not found in class map.");
