@@ -3,7 +3,7 @@
         'name' => 'duvanmesa/guiastur-api',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'ef924ef59391e7f8a76ddffd1a526cf110147b31',
+        'reference' => 'eec85038427ebb8a719bdcb69114d732626b74f7',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'duvanmesa/guiastur-api' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'ef924ef59391e7f8a76ddffd1a526cf110147b31',
+            'reference' => 'eec85038427ebb8a719bdcb69114d732626b74f7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
