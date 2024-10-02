@@ -10,6 +10,8 @@ class ComposerStaticInit20fad51902f91e7fd3039e016a6556b5
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        'dd210022bf435ff398a2e6d7c130d749' => __DIR__ . '/..' . '/php-patterns/activerecord/ActiveRecord.php',
+        '906eee7ed2d71aa037604436390ae561' => __DIR__ . '/..' . '/php-patterns/activerecord/lib/Utils.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -34,6 +36,10 @@ class ComposerStaticInit20fad51902f91e7fd3039e016a6556b5
         'D' => 
         array (
             'Dotenv\\' => 7,
+        ),
+        'A' => 
+        array (
+            'ActiveRecord\\' => 13,
         ),
     );
 
@@ -65,6 +71,10 @@ class ComposerStaticInit20fad51902f91e7fd3039e016a6556b5
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'ActiveRecord\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-patterns/activerecord/lib',
         ),
     );
 
