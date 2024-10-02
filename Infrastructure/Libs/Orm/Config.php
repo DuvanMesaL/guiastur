@@ -1,9 +1,6 @@
 <?php
 require_once __DIR__ . "/activerecord/ActiveRecord.php";
-require_once __DIR__ . "/../../../vendor/autoload.php";
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 ActiveRecord\Config::initialize(function ($cfg) {
   $cfg->set_model_directory(__DIR__ . "/../../../Domain/Entities");
