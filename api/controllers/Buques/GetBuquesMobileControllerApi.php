@@ -27,25 +27,37 @@ class GetBuquesMobileControllerApi
         }
     }
 
-    public function handleRequest()
+    public function handleRequest($request = null)
     {
         try {
-            $request = json_decode(file_get_contents('php://input'), true);
-
+            // Validación de la acción
             if (!isset($request["action"]) || $request["action"] !== "listall") {
                 ResponseMiddleware::error("Acción no permitida", 403);
                 return;
             }
 
+            // Validación del token
             $decodedToken = $this->authService->validateToken($this->getAuthorizationHeader());
-
             AuthorizationMiddleware::checkRolePermission($decodedToken->data->role, ['ADMIN', 'Super Usuario']);
 
-            $response = $this->getBuquesService->getBuques();
+            // Parámetros de paginación
+            $page = isset($request['page']) ? (int)$request['page'] : 1;
+            $perPage = isset($request['perPage']) ? (int)$request['perPage'] : 20;
 
+            // Obtén todos los buques (sin paginación en el servicio)
+            $response = $this->getBuquesService->getBuques();
             $buques = $response->getBuques();
+
+            // Total de buques
+            $total = count($buques);
+
+            // Lógica de paginación
+            $offset = ($page - 1) * $perPage;
+            $paginatedBuques = array_slice($buques, $offset, $perPage);
+
+            // Formateo de la respuesta
             $result = [];
-            foreach ($buques as $buque) {
+            foreach ($paginatedBuques as $buque) {
                 $result[] = [
                     'id' => $buque->getId(),
                     'codigo' => $buque->getCodigo(),
@@ -55,7 +67,13 @@ class GetBuquesMobileControllerApi
                 ];
             }
 
-            ResponseMiddleware::success($result);
+            // Respuesta con paginación
+            ResponseMiddleware::success([
+                'data' => $result,
+                'page' => $page,
+                'perPage' => $perPage,
+                'total' => $total,
+            ]);
         } catch (\Exception $e) {
             $this->logError($e);
             ResponseMiddleware::error("Error en el servidor", 500);
